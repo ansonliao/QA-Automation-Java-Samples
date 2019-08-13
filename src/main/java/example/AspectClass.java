@@ -16,17 +16,17 @@ public class AspectClass {
 
     }
 
-    @After("pointCut()")
-    public void afterAdvice(JoinPoint joinPoint) throws Throwable {
-        System.out.println("Before point cut...");
-        System.out.println("After point cut.");
-    }
-
-    // @Around("pointCut()")
-    // public void aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
-    //     System.out.println("before...");
-    //     joinPoint.proceed();
-    //     System.out.println("after...");
+    // @After("pointCut()")
+    // public void afterAdvice(JoinPoint joinPoint) throws Throwable {
+    //     System.out.println("Before point cut...");
+    //     System.out.println("After point cut.");
     // }
+
+    @Around("pointCut()")
+    public void aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("before...");
+        joinPoint.proceed();
+        System.out.println("after...");
+    }
 
 }
