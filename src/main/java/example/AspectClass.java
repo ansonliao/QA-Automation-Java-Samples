@@ -24,9 +24,9 @@ public class AspectClass {
 
     @Around("pointCut()")
     public void aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("before...");
+        System.out.println("before around advice...");
         joinPoint.proceed();
-        System.out.println("after...");
+        System.out.println("after around advice...");
     }
 
 }

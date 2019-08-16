@@ -10,10 +10,4 @@ public class MyTest {
         MyApp myApp = new MyApp();
         myApp.sayHi();
     }
-
-
-    // public static void main( String[] args ) {
-    //     MyApp myApp = new MyApp();
-    //     myApp.sayHi();
-    // }
 }

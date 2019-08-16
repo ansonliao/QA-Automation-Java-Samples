@@ -1,13 +1,14 @@
 plugins {
     id 'java'
+    id 'application'
     id "io.freefair.aspectj" version "3.8.4"
 }
 
 group 'com.ansonliao'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 sourceSets.main.aspectj.srcDir "src/main/java"
 sourceSets.main.java.srcDirs = files()
 sourceSets.test.aspectj.srcDir "src/test/java"
@@ -19,11 +20,37 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.testng/testng
     compile group: 'org.testng', name: 'testng', version: '6.14.3'
-
-    // https://mvnrepository.com/artifact/org.aspectj/aspectjrt
     compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.4'
+}
+
+test {
+    useTestNG() {
+        reports.html.enabled = true
+
+        def dir = System.getProperty('testngReportOutput')
+        outputDirectory = dir ? file(dir) : file('$buildDir/testng-output')
+        reports.html.setDestination(outputDirectory)
+    }
+
+    testLogging {
+        events 'PASSED', 'FAILED', 'SKIPPED'
+        showStandardStreams = true
+    }
+}
+
+task runMyApp(type: JavaExec) {
+    classpath(sourceSets.main.runtimeClasspath, sourceSets.test.runtimeClasspath)
+
+    main = 'example.MyApp'
+    args 'hello', 'world'
+}
+
+task runMyTestMainApp(type: JavaExec) {
+    classpath(sourceSets.main.runtimeClasspath, sourceSets.test.runtimeClasspath)
+
+    main = 'example.MyTestMainApp'
+    args 'hello', 'world'
 }
 
 aspectj {
