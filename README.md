@@ -46,7 +46,7 @@ BUILD SUCCESSFUL in 4s
 
 3. 
 
-In ``src/test/java/example/MyTest` includes some TestNG test method, can run this by Gradle command:
+In `src/test/java/example/MyTest` includes some TestNG test method, can run this by Gradle command:
 
 ```shell script
 gradle clean test
