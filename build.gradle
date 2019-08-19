@@ -14,6 +14,7 @@ sourceSets.main.java.srcDirs = files()
 sourceSets.test.aspectj.srcDir "src/test/java"
 sourceSets.test.java.srcDirs = files()
 
+mainClassName = "example.MyApp"
 
 repositories {
     mavenCentral()
@@ -37,13 +38,6 @@ test {
         events 'PASSED', 'FAILED', 'SKIPPED'
         showStandardStreams = true
     }
-}
-
-task runMyApp(type: JavaExec) {
-    classpath(sourceSets.main.runtimeClasspath, sourceSets.test.runtimeClasspath)
-
-    main = 'example.MyApp'
-    args 'hello', 'world'
 }
 
 task runMyTestMainApp(type: JavaExec) {

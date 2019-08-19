@@ -7,21 +7,20 @@ This is the sample project that configurate AspectJ plugin for a normal Gradle p
 In `src/main/java/example/MyApp.java` includes a main method, can run this main method by Gradle command:
 
 ```shell script
-gradle clean runMyApp
+./gradlew clean run
 ```
 
 and then will get the output from the console similar as below:
 
-```shell script
-gradle clean runMyApp
-
-> Task :runMyApp
+```
+> Task :run
 before around advice...
 Hello World!
 after around advice...
 
-BUILD SUCCESSFUL in 5s
-4 actionable tasks: 4 executed
+BUILD SUCCESSFUL in 1s
+3 actionable tasks: 2 executed, 1 from cache
+
 ```
 
 2. 
