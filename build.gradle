@@ -10,6 +10,7 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 mainClassName = "example.MyApp"
 
