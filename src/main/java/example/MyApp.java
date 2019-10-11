@@ -1,18 +1,21 @@
 package example;
 
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.stream.Stream;
-
+@Getter
+@Setter
 public class MyApp {
-
-    public void sayHi() {
-        System.out.println("Hello World!");
-    }
+    private int index;
+    private String string;
 
     public static void main(String[] args) {
-        // Stream.of(args).forEach(System.out::println);
         MyApp myApp = new MyApp();
         myApp.sayHi();
+    }
+
+    public void sayHi() {
+        System.out.println(string);
     }
 
 }
