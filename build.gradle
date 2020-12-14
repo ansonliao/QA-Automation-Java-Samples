@@ -1,8 +1,8 @@
 plugins {
     id 'java'
     id 'application'
-    id "io.freefair.aspectj.post-compile-weaving" version "4.1.2"
-    id "io.freefair.lombok" version "4.1.2"
+    id 'io.freefair.aspectj.post-compile-weaving' version '5.3.0'
+    id 'io.freefair.lombok' version '5.3.0'
 }
 
 group 'com.ansonliao'
@@ -12,14 +12,14 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-mainClassName = "example.MyApp"
+mainClassName = 'example.MyApp'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.4'
+    compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.6'
     testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
 }
 
@@ -46,5 +46,5 @@ task runMyTestMainApp(type: JavaExec) {
 }
 
 aspectj {
-    version = "1.9.4"
+    version = '1.9.6'
 }
