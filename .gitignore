@@ -20,4 +20,4 @@ gradle-app.setting
 .idea/misc.xml
 .idea/vcs.xml
 /lombok.config
-/gradle/
+/.idea/
