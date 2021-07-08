@@ -19,3 +19,5 @@ gradle-app.setting
 .idea/gradle.xml
 .idea/misc.xml
 .idea/vcs.xml
+/lombok.config
+/gradle/
